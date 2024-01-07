@@ -37,7 +37,7 @@
         </div>
       </div>
     </nav>
-    <div class="container" style="padding-top: 70px; height: 100vh; overflow-y: auto;">
+    <div class="container" style="padding-top: 70px; height: 100vh; overflow-y: auto">
       <div class="d-flex justify-content-between my-3">
         <h2>DATA MATAKULIAH</h2>
         <router-link class="btn btn-primary" to="/tambahmatakuliah">Tambah Data</router-link>
@@ -137,4 +137,3 @@ export default {
   },
 };
 </script>
-

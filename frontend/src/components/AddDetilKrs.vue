@@ -4,14 +4,14 @@
             <div class="card-body">
                 <h2 class="card-title">TAMBAH DETIL KRS</h2>
                 <form @submit.prevent="addDetilKrs">
-                    <div class="mb-3">
-                        <label for="krs_id" class="form-label">Tahun - Semester</label>
-                        <select class="form-select" v-model="detilKrs.krs_id" required>
-                            <option v-for="krs in KRSList" :key="krs.id" :value="krs.id">
-                                {{ krs.tahun }} - {{ krs.semester }}
-                            </option>
-                        </select>
-                    </div>
+                  <div class="mb-3">
+                      <label for="krs_id" class="form-label">Tahun - Semester</label>
+                      <select class="form-select" v-model="KrsId">
+                          <option v-for="krs in KRSList" :key="krs.id" :value="krs.id">
+                              {{ krs.tahun }} - {{ krs.semester }}
+                          </option>
+                      </select>
+                  </div>
                     <div class="mb-3">
                         <label for="kodeMatkul" class="form-label">Kode Matakuliah</label>
                         <select class="form-select" v-model="detilKrs.matakuliah_id" required>
@@ -34,8 +34,8 @@
                     </div>
 
                     <div class="btn-group">
-                        <button type="submit" class="btn btn-primary">Tambah Data</button>
-                        <router-link class="btn btn-danger" to="/detilkrs">Kembali</router-link>
+                        <button type="submit" class="btn btn-primary ">Tambah Data</button>
+                        <router-link class="btn btn-danger" to="/krs">Kembali</router-link>
                     </div>
                 </form>
             </div>
@@ -49,6 +49,7 @@
   export default {
     data() {
       return {
+        KrsId: '',
         detilKrs: {
           'krs_id': '',
           'matakuliah_id': '',
@@ -64,10 +65,11 @@
       this.loadMatakuliahList();
       this.loadMahasiswaList();
       this.loadKrsList();
+      this.KrsId = this.$route.params.id;
     },
     methods: {
       loadMatakuliahList() {
-        var matkulurl = 'hhttps://api-group7-prognet.manpits.xyz/api/matakuliah';
+        var matkulurl = 'https://api-group7-prognet.manpits.xyz/api/matakuliah';
         axios.get(matkulurl).then(({ data }) => {
           this.MatakuliahList = data;
         });
@@ -85,6 +87,7 @@
         });
       },
       addDetilKrs() {
+        this.detilKrs.krs_id = this.KrsId;
         console.log('Data to be submitted:', this.detilKrs);
         var url = 'https://api-group7-prognet.manpits.xyz/api/detilkrs';
         axios.post(url, this.detilKrs).then(() => {

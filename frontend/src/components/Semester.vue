@@ -63,7 +63,7 @@
             <td>{{ Mahasiswa.nim }}</td>
             <td>{{ Mahasiswa.nama }}</td>
             <td>
-              <router-link :to="{ name: 'MatkulMhs', params: { id: Mahasiswa.id } }" class="btn btn-info">Detail Matkuliah Mahasiswa</router-link>
+              <router-link :to="{ name: 'MatkulMhs', params: { id: KrsId } }" class="btn btn-info">Detail Matkuliah Mahasiswa</router-link>
             </td>
           </tr>
         </tbody>
@@ -71,7 +71,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import axios from 'redaxios';

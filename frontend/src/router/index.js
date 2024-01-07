@@ -74,9 +74,9 @@ const routes = [
     component: () => import('../components/TambahKrs.vue'),
   },
   {
-    path: '/tambahdetilkrs',
-    name: 'TambahDetilKrs',
-    component: () => import('../components/TambahDetilKrs.vue'),
+    path: '/tambahdetilkrs/:id',
+    name: 'AddDetilKrs',
+    component: () => import('../components/AddDetilKrs.vue'),
   },
   {
     path: '/detailmahasiswa/:id',

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Dashboard</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
@@ -37,11 +37,14 @@
         </div>
       </div>
     </nav>
-    <div class="table-responsive shadow p-3 mb-3 bg-white rounded" style="display: flex; flex-direction: column; align-items: center; justify-content: center">
-      <h1 style="font-size: 36px; color: #333">Selamat Datang!</h1>
-      <p style="text-align: center; margin-bottom: 20px; font-size: 18px; color: #555">
-        Selamat datang di Dashboard Tata Usaha. Di sini Anda dapat mengelola Kartu Rencana Studi (KRS) mahasiswa. Gunakan menu di atas untuk navigasi ke berbagai fitur, termasuk pengelolaan data mahasiswa, matakuliah, dan KRS.
-      </p>
+    <div class="content-section">
+      <!-- Welcome Message -->
+      <div class="welcome-message table-responsive shadow p-5 mb-3 bg-white rounded">
+        <h1 style="font-size: 36px; color: #333">Selamat Datang!</h1>
+        <p style="text-align: center; margin-bottom: 20px; font-size: 18px; color: #555">
+          Selamat datang di Dashboard Tata Usaha. Di sini Anda dapat mengelola Kartu Rencana Studi (KRS) mahasiswa. Gunakan menu di atas untuk navigasi ke berbagai fitur, termasuk pengelolaan data mahasiswa, matakuliah, dan KRS.
+        </p>
+      </div>
     </div>
 
     <div class="table-responsive shadow p-3 mb-5 bg-white rounded">
@@ -50,6 +53,29 @@
   </div>
 </template>
 
+
+<style scoped>
+/* Add some styles to make it visually appealing */
+.content-section {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 70px;
+}
+
+.welcome-message {
+  margin-bottom: 20px;
+}
+
+.chart-section {
+  overflow-y: auto;
+  max-height: 400px; /* Set the maximum height as needed */
+}
+
+/* Additional styling as needed */
+</style>
 <script>
 import axios from 'axios';
 import Chart from 'chart.js/auto';
