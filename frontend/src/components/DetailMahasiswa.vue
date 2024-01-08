@@ -23,12 +23,13 @@
                 <router-link class="nav-link" to="/matakuliah">Data Matakuliah</router-link>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Data KRS </a>
+                <router-link to="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Data KRS </router-link>
                 <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item" href="/krs">KRS</a></li>
-                  <li><a class="dropdown-item" href="/detilkrs">Detail KRS</a></li>
+                  <li><router-link to="/krs" class="dropdown-item">KRS</router-link></li>
+                  <li><router-link to="/detilkrs" class="dropdown-item">Detail KRS</router-link></li>
                 </ul>
               </li>
+
               <li class="d-flex justify-content-between my-3" style="text-align: left">
                 <button type="button" class="btn btn-outline-danger" style="background-color: red; color: white" @click="logoutUser">Logout</button>
               </li>
@@ -38,7 +39,7 @@
       </div>
     </nav>
 
-    <main class="container mt-4 card shadow p-5 mb-5 bg-light rounded ">
+    <main class="container mt-4 card shadow p-5 mb-5 bg-light rounded">
       <div class="mb-4">
         <h2 class="text-center text mb-3">Informasi Mahasiswa</h2>
         <template v-if="isLoading">

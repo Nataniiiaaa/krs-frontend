@@ -22,12 +22,10 @@
               <router-link class="nav-link" to="/matakuliah">Data Matakuliah</router-link>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Data KRS </a>
+              <router-link to="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Data KRS </router-link>
               <ul class="dropdown-menu dropdown-menu-dark">
-                <li><a class="dropdown-item" href="/krs">KRS</a></li>
-                <li>
-                  <a class="dropdown-item" href="/detilkrs">Detail KRS</a>
-                </li>
+                <li><router-link to="/krs" class="dropdown-item">KRS</router-link></li>
+                <li><router-link to="/detilkrs" class="dropdown-item">Detail KRS</router-link></li>
               </ul>
             </li>
           </ul>
